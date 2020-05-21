@@ -17,6 +17,7 @@
 		"vuetify": "^2.2.14"
 	},
 	"devDependencies": {
+		"@nuxtjs/pwa": "^2.6.0",
 		"@prettier/plugin-php": "^0.14.1",
 		"@vue/eslint-config-prettier": "^6.0.0",
 		"babel-eslint": "^10.0.3",

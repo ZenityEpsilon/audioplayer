@@ -1,3 +1,5 @@
+import path from "path";
+import fs from "fs";
 module.exports = {
 	mode: "spa",
 	/*
@@ -25,6 +27,12 @@ module.exports = {
 					"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons",
 			},
 		],
+	},
+	server: {
+		https: {
+			key: fs.readFileSync(path.resolve(__dirname, "server.key")),
+			cert: fs.readFileSync(path.resolve(__dirname, "server.crt")),
+		},
 	},
 	plugins: ["~/plugins/vuetify.js"],
 	css: ["~/assets/less/main.less"],
@@ -56,7 +64,8 @@ module.exports = {
 		},
 		//transpile: [/^vuetify/],
 	},
-	modules: ["@nuxtjs/axios"],
+	modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+	workbox: { dev: true },
 	axios: {
 		// proxyHeaders: false
 	},

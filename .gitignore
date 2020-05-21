@@ -126,3 +126,6 @@ dist
 
 # Robots Files
 robots.txt
+
+# service worker
+sw.*
